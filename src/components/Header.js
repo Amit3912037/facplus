@@ -3,17 +3,24 @@ import headerLogo from '../images/header-logo.png';
 import SearchIcon from '@mui/icons-material/Search';
 import MenuIcon from '@mui/icons-material/Menu';
 
+import './Header.css';
+
 
 export default function Header() {
 
     const [mobileView, setMobileView] = useState(false);
+
+  
+
     const toggleHandler = () => {
+       
         setMobileView((prevState => !prevState))
     }
 
 
     return (
-        <nav className="bg-black shadow-lg">
+        // className={`${mobileView? 'h-76':'h-18'} bg-black transition-all duration-1000 ease-in-out`}
+        <nav id="navbar" className=''  >
             <div className="mx-auto px-4">
                 <div className="flex justify-between">
                     <div className="flex w-full">
@@ -43,8 +50,8 @@ export default function Header() {
                     </div>
                 </div>
             </div>
-            <div className={`${mobileView ? '' : 'hidden'} mobile-menu`}>
-                <ul>
+            <div className={`${mobileView?'': 'hidden'} mobile-menu`}>
+                <ul className=''>
                     <li className="flex items-center py-2 px-6" >
                         <input type="text" />
                         <SearchIcon className="bg-yellow-400" />
@@ -52,7 +59,6 @@ export default function Header() {
                     <li><a href="index.html" className="block text-white text-sm px-6 py-4 font-semibold">Login</a></li>
                     <li><a href="#" className="block text-white text-sm px-6 py-4">Orders</a></li>
                     <li><a href="#" className="block text-white text-sm px-6 py-4">Cart</a></li>
-
                 </ul>
             </div>
         </nav>

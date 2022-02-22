@@ -1,6 +1,5 @@
 import PRODUCTS from "../data/products";
-// import { FETCH_PRODUCTS } from "./actions";
-import { PRODUCTS_FETCH_SUCCEEDED, PRODUCTS_FETCH_FAILED, SET_LOADING } from "./actions";
+import { PRODUCTS_FETCH_SUCCEEDED, PRODUCTS_FETCH_FAILED, FETCH_PRODUCTS } from "./actions";
 
 const initialState = {
     products: PRODUCTS,
@@ -8,17 +7,13 @@ const initialState = {
 }
 
 const productsReducer = (state = initialState, action) => {
-    // console.log(action.products);
     switch (action.type) {
+        case FETCH_PRODUCTS:
+            return { ...state, isLoading: true }
         case PRODUCTS_FETCH_SUCCEEDED:
-            // console.log(action.products);
-            // return {...state,products:action.products};
-            return state;
+            return { isLoading: false, products: PRODUCTS }
         case PRODUCTS_FETCH_FAILED:
-            console.log(action.message);
-            return state;
-        case SET_LOADING:
-            return {...state,isLoading: action.loading}
+            return { ...state, isLoading: false };
         default:
             return state;
     }

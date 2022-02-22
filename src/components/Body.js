@@ -1,12 +1,8 @@
 import React, {useEffect, useState } from 'react'
-import { useDispatch } from 'react-redux';
-import { useSelector } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux';
 import Category from './Category';
 import * as productsActions from '../store/actions'
-
-
-
-
+// import PRODUCTS from '../data/products';
 
 export default function Body() {
 
@@ -15,14 +11,11 @@ export default function Body() {
 
     const dispatch = useDispatch();
      const categories = useSelector(state => state.products.products);
-    
+    // const categories=PRODUCTS;
 
-    
-
-   
     useEffect(() => {
-        dispatch(productsActions.fetchProducts());
-    }, [dispatch])
+            dispatch(productsActions.fetchProducts());
+    }, [dispatch,categories])
 
     useEffect(() => {
         const items = [];

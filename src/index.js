@@ -1,14 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import './index.css'
+import createSagaMiddleware from 'redux-saga'
+import { createStore, combineReducers, applyMiddleware } from "redux";
+import { Provider } from "react-redux";
 import reportWebVitals from './reportWebVitals';
 
-import { createStore, combineReducers,applyMiddleware } from "redux";
-import { Provider } from "react-redux";
 import productsReducer from './store/reducers';
 import mySaga from './sagas';
-import createSagaMiddleware from 'redux-saga'
+import './index.css'
 
 const sagaMiddleware = createSagaMiddleware();
 
@@ -16,11 +16,9 @@ const rootReducer = combineReducers({
   products: productsReducer
 })
 
-const store = createStore(rootReducer,applyMiddleware(sagaMiddleware));
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
 
 sagaMiddleware.run(mySaga);
-
-
 
 ReactDOM.render(
   <Provider store={store}>
