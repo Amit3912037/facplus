@@ -1,8 +1,10 @@
-#navbar{
-    height: 50px;
-    transition: height .3s ease-in-out;
+
+.compressed{
+    height: 60px;
+    transition: height .3s ease-out;
+
 }
-#navbar:hover{
-    height: 200px;
-    background-color: aqua;
+.expanded{
+    height: 250px;
+    transition: height .3s ease-out;
 }

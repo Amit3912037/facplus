@@ -20,7 +20,7 @@ export default function Header() {
 
     return (
         // className={`${mobileView? 'h-76':'h-18'} bg-black transition-all duration-1000 ease-in-out`}
-        <nav id="navbar" className=''  >
+        <nav id="navbar" className={`bg-black ${mobileView?'expanded':'compressed'} `}  >
             <div className="mx-auto px-4">
                 <div className="flex justify-between">
                     <div className="flex w-full">
