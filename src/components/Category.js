@@ -13,7 +13,7 @@ export default function Category(props) {
         <>
             <div className='m-3'>
                 <div className='font-bold text-2xl m-2 text-red-900'>{isLoading?<Skeleton width={200}/>:props.name}</div>
-                <div className='flex overflow-x-auto border-2 border-gray-100 bg-sky-100'>
+                <div className='flex flex-nowrap w-full md:flex-wrap overflow-x-auto border-2 border-gray-100 bg-sky-100'>
                     {
                         props.items && props.items.map(((item, index) =>
                             <Item

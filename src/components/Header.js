@@ -20,7 +20,8 @@ export default function Header() {
 
     return (
         // className={`${mobileView? 'h-76':'h-18'} bg-black transition-all duration-1000 ease-in-out`}
-        <nav id="navbar" className={`bg-black ${mobileView?'expanded':'compressed'} `}  >
+        // className={`bg-black ${mobileView?'expanded':'compressed'} `}
+        <nav id="navbar" className={`${mobileView? 'h-64':'h-16'} bg-black transition-all duration-300 ease-in-out`}   >
             <div className="mx-auto px-4">
                 <div className="flex justify-between">
                     <div className="flex w-full">
